@@ -3,15 +3,19 @@ window.addEventListener("scroll", function() {
     header.classList.toggle("active", window.scrollY > 500);
 })
 
-const appleSequenceImages = [];
-// const treeSequenceImages = [];
+const desktopSequenceImages = [];
+const tabSequenceImages = [];
+const mobileSequenceImages = [];
 
 for (let i = 0; i <= 268; i++) {
-    appleSequenceImages.push(`${`000${i}`.slice(-4)}.png`);
+    desktopSequenceImages.push(`${`000${i}`.slice(-4)}.png`);
 }
-// for (let i = 0; i <= 98; i ++) {
-//   treeSequenceImages.push(`${`000${i}`.slice(-3)}.jpg`);
-// }
+for (let i = 0; i <= 268; i ++) {
+  tabSequenceImages.push(`${`000${i}`.slice(-3)}.png`);
+}
+for (let i = 0; i <= 268; i ++) {
+  mobileSequenceImages.push(`${`000${i}`.slice(-3)}.png`);
+}
 
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
@@ -339,27 +343,35 @@ class ScrollSequence {
   }
 }
 
-const appleSequence = new ScrollSequence({
-  container: '.apple-sequence',
-  scrollWith: '.apple-container',
-  images: appleSequenceImages,
+const desktopSequence = new ScrollSequence({
+  container: '.desktop-sequence',
+  scrollWith: '.desktop-container',
+  images: desktopSequenceImages,
   imagesRoot: 'assets/img/png_seq/Glo_Web_0',
-//   priorityFrames: [0, 20, 40, 60, 90],
   cover: true,
   playUntil: 'scroll-out',
   starts: 'in'
 });
 
-// const treeSequence = new ScrollSequence({
-//   container: '.tree-sequence',
-//   scrollWith: '.tree-container',
-//   images: treeSequenceImages,
-//   imagesRoot: 'https://jacobbelanger.com/assets/sequence/',
-//   priorityFrames: [0, 20, 40, 60, 90],
-//   cover: true,
-//   starts: 'out',
-//   ends: 'in'
-// });
+const tabSequence = new ScrollSequence({
+  container: '.tab-sequence',
+  scrollWith: '.tab-container',
+  images: tabSequenceImages,
+  imagesRoot: 'assets/img/png_seq_tab/Glo_Web- 768-1024_00',
+  cover: true,
+  starts: 'out',
+  ends: 'in'
+});
+
+const mobileSequence = new ScrollSequence({
+  container: '.mobile-sequence',
+  scrollWith: '.mobile-container',
+  images: mobileSequenceImages,
+  imagesRoot: 'assets/img/png_seq_mobile/Glo_414-600_00',
+  cover: true,
+  starts: 'out',
+  ends: 'in'
+});
 
 // END SCROLL_SEQUENCE CODE
 

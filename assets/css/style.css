@@ -30,7 +30,7 @@ header.active {
 }
 
 .logo {
-    width: 3.5%;
+    width: 50px;
 }
 
 ul {
@@ -165,24 +165,37 @@ video {
     text-shadow: none;
 }
 
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-        width: 100%;
+.container.scroll-container.tab {
+    display: none;
+}
+
+.container.scroll-container.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container.scroll-container.desktop {
+        display: none;
+    }
+    .container.scroll-container.tab {
+        display: block;
+    }
+    .speak {
+        justify-content: center;
     }
 }
 
- :root {
-    font-size: 20px;
-    font-family: "Open Sans", sans-serif;
-    color: white;
-    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
-}
-
-body {
-    margin: 0;
-}
-
-* {
-    box-sizing: border-box;
+@media screen and (max-width: 600px) {
+    .container.scroll-container.tab {
+        display: none;
+    }
+    .container.scroll-container.mobile {
+        display: block;
+    }
+    .speak h1 {
+        font-size: 1.15rem;
+    }
+    .speak h1 span {
+        font-size: 1.25rem;
+    }
 }
