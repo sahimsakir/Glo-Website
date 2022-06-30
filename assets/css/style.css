@@ -105,27 +105,32 @@ video {
 }
 
 .speak {
-    margin: 150vh 0;
+    margin: 700vh 0;
     opacity: 0;
     display: flex;
     justify-content: flex-end;
 }
 
-.speak.active {
-    opacity: 1;
-}
 
-.speak.right {
+/* .speak.late {
+    margin-top: 1000vh;
+} */
+
+.speak.center {
     padding-left: 4em;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .speak:first-child {
     margin-top: 50vh;
 }
 
+.speak.last {
+    height: 2000vh;
+}
+
 .speak[data-scroll] {
-    transform: translatey(calc(var(--viewport-y) * 100vh));
+    transform: translatey(calc(var(--viewport-y) * 30vh));
     opacity: calc(var(--visible-y));
 }
 
@@ -186,11 +191,14 @@ video {
     .container.scroll-container.tab {
         display: block;
     }
-    .speak {
-        justify-content: center;
-    }
     .text h3 {
         font-size: 1rem;
+    }
+    .speak h1 {
+        font-size: 1.15rem;
+    }
+    .speak h1 span {
+        font-size: 1.25rem;
     }
 }
 
@@ -213,11 +221,14 @@ video {
     .container.scroll-container.mobile {
         display: block;
     }
+    .speak {
+        justify-content: center;
+    }
     .speak h1 {
-        font-size: 1.15rem;
+        font-size: 0.5rem;
     }
     .speak h1 span {
-        font-size: 1.25rem;
+        font-size: 0.6rem;
     }
     .text h3 {
         font-size: 0.5rem;
